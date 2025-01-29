@@ -51,7 +51,7 @@
     </div>
 
     <<button id="musicButton" onclick="toggleMusic()">🎶</button>
-    <audio id="backgroundMusic">
+    <audio id="backgroundMusic" loop>
         <source src="audio/DUKI - Si Me Sobrara el Tiempo (Video Oficial).mp3" type="audio/mpeg">
         <source src="audio/DUKI - Antes de Perderte (Video Oficial).mp3" type="audio/mpeg">
     </audio>
@@ -71,12 +71,12 @@
         setInterval(() => moveSlide(1), 3000);
 
         function toggleMusic() {
-             if (music.paused) {
-                 music.play().then(() => {
-                     musicButton.textContent = "🔇";
-                 }).catch((error) => {
-                     console.error("Error al reproducir música:", error);
-                 });
+            if (music.paused) {
+                music.play().then(() => {
+                    musicButton.textContent = "🔇";
+                }).catch((error) => {
+                    console.error("Error al reproducir música:", error);
+                });
              } else {
                  music.pause();
                  musicButton.textContent = "🎶";

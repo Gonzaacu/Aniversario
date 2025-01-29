@@ -32,7 +32,7 @@
         <p>Te amo con todo mi corazón. ❤️</p>
     </div>
 
-    <button id="musicButton" onclick="toggleMusic()">🎶</button>
+    <<button id="musicButton" onclick="toggleMusic()">🎶</button>
     <audio id="backgroundMusic" loop>
         <source src="musica.mp3" type="audio/mpeg">
     </audio>
@@ -41,7 +41,7 @@
         let index = 0;
         const images = document.querySelectorAll(".carousel img");
         const music = document.getElementById("backgroundMusic");
-        let musicPlaying = false;
+        const musicButton = document.getElementById("musicButton");
 
         function moveSlide(step) {
             images[index].classList.remove("active");
@@ -52,12 +52,16 @@
         setInterval(() => moveSlide(1), 3000);
 
         function toggleMusic() {
-            if (musicPlaying) {
-                music.pause();
+            if (music.paused) {
+                music.play().then(() => {
+                    musicButton.textContent = "🔇";
+                }).catch((error) => {
+                    console.error("Error al reproducir música:", error);
+                });
             } else {
-                music.play();
+                music.pause();
+                musicButton.textContent = "🎶";
             }
-            musicPlaying = !musicPlaying;
         }
 
         function createHeart() {

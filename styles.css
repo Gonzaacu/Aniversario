@@ -104,6 +104,13 @@ h1 {
     font-size: 1.2em;
     color: white;
 }
+.typing-text {
+    text-align: center; /* Centra el texto */
+    text-align-last: justify; /* Justifica el texto */
+    line-height: 1.5; /* Mejorar la legibilidad */
+    margin: 20px auto; /* Márgenes para un mejor espaciado */
+    max-width: 80%; /* Limitar el ancho del texto */
+}
 
 button:focus {
     outline: none;

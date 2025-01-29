@@ -33,7 +33,7 @@
 
         <p>Te amo mi minions. ❤️</p>
 
-        <!-- Aquí reubicamos el texto dinámico -->
+        <!-- Aquí reubicamos el texto dinámico debajo del "Te amo mi minions." -->
         <p id="dynamicText"></p>
 
         <!-- Contenedor para los iconos de calendario -->
@@ -122,9 +122,11 @@ Ahora entiendo cuando me decían "que pronto llegará una persona que te ame y t
         }
 
         window.addEventListener('click', () => {
-            music.play().catch((error) => {
-                console.error("Error al iniciar la música:", error);
-            });
+            if (music.paused) {
+                music.play().catch((error) => {
+                    console.error("Error al iniciar la música:", error);
+                });
+            }
         });
 
         // Función para crear corazones flotantes

@@ -52,17 +52,18 @@
 
         setInterval(() => moveSlide(1), 3000);
 
-        function toggleMusic() {
-            if (music.paused) {
-                music.play().then(() => {
-                    musicButton.textContent = "🔇";
-                }).catch((error) => {
-                    console.error("Error al reproducir música:", error);
-                });
-            } else {
-                music.pause();
-                musicButton.textContent = "🎶";
-            }
+       function toggleMusic() {
+             if (music.paused) {
+                 music.play().then(() => {
+                     musicButton.textContent = "🔇";
+                     console.log("Música reproduciéndose");  // Esto te ayudará a verificar si la música se reproduce
+                 }).catch((error) => {
+                     console.error("Error al reproducir música:", error);
+                 });
+             } else {
+                 music.pause();
+                 musicButton.textContent = "🎶";
+             }
         }
 
         function createHeart() {

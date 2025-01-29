@@ -90,6 +90,7 @@ h1 {
 
 .calendar-item {
     text-align: center;
+    margin: 0 20px;
 }
 
 .calendar-item img {

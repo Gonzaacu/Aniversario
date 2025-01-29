@@ -104,12 +104,15 @@ h1 {
     font-size: 1.2em;
     color: white;
 }
-.typing-text {
-    text-align: center; /* Centra el texto */
-    text-align-last: justify; /* Justifica el texto */
-    line-height: 1.5; /* Mejorar la legibilidad */
-    margin: 20px auto; /* Márgenes para un mejor espaciado */
-    max-width: 80%; /* Limitar el ancho del texto */
+.writing-text {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-top: 20px;
+    white-space: pre-wrap; /* Permite saltos de línea automáticos */
+    word-wrap: break-word; /* Evita que las palabras se salgan del contenedor */
+    width: 80%; /* Controla el ancho del texto */
+    margin: 0 auto;
 }
 
 button:focus {

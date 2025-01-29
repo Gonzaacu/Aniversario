@@ -12,9 +12,6 @@
         <!-- Primer texto con efecto typing -->
         <p class="typing-text">Un año lleno de amor y momentos inolvidables.</p>
         
-        <!-- Efecto typing para el segundo texto con ID "dynamicText" -->
-        <p id="dynamicText"></p>
-
         <!-- Carrusel de imágenes -->
         <div class="carousel">
             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -33,8 +30,11 @@
             <img src="img/IMG-13.jpg" alt="Foto 13">
             <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-        
+
         <p>Te amo mi minions. ❤️</p>
+
+        <!-- Aquí reubicamos el texto dinámico -->
+        <p id="dynamicText"></p>
 
         <!-- Contenedor para los iconos de calendario -->
         <div class="calendar-icons">
@@ -56,7 +56,7 @@
         </div>
     </div>
 
-    <!-- Botón para la música -->
+    <!-- Botón para controlar la música -->
     <button id="musicButton" onclick="toggleMusic()">🎶</button>
     <audio id="backgroundMusic" loop>
         <source src="audio/DUKI - Si Me Sobrara el Tiempo (Video Oficial).mp3" type="audio/mpeg">

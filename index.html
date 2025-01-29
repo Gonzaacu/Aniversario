@@ -65,6 +65,11 @@
                  musicButton.textContent = "🎶";
              }
         }
+        window.addEventListener('click', () => {
+            music.play().catch((error) => {
+                console.error("Error al iniciar la música:", error);
+            });
+        });
 
         function createHeart() {
             const heart = document.createElement("div");

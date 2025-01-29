@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Feliz Aniversario!</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:," /> <!-- Esta línea evita la búsqueda de favicon.ico -->
 </head>
 <body>
     <div class="container">
         <h1>Feliz 2 Años Amor</h1>
         <p class="typing-text">Un año lleno de amor y momentos inolvidables.</p>
 
-        <!-- Este es el lugar donde el texto será mostrado con el efecto typing -->
         <p id="dynamicText"></p>
     
         <div class="carousel">
             <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
             <img src="img/IMG-1.jpg" alt="Foto 1" class="active">
-            <!-- Más imágenes aquí -->
+            <img src="img/IMG-2.jpg" alt="Foto 2">
+            <img src="img/IMG-3.jpg" alt="Foto 3">
+            <img src="img/IMG-4.jpg" alt="Foto 4">
+            <img src="img/IMG-5.jpg" alt="Foto 5">
+            <img src="img/IMG-6.jpg" alt="Foto 6">
+            <img src="img/IMG-7.jpg" alt="Foto 7">
+            <img src="img/IMG-8.jpg" alt="Foto 8">
+            <img src="img/IMG-9.jpg" alt="Foto 9">
+            <img src="img/IMG-10.jpg" alt="Foto 10">
+            <img src="img/IMG-11.jpg" alt="Foto 11">
+            <img src="img/IMG-12.jpg" alt="Foto 12">
+            <img src="img/IMG-13.jpg" alt="Foto 13">
             <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
         
         <p>Te amo mi minions. ❤️</p>
-
         <!-- Contenedor para los iconos de calendario -->
         <div class="calendar-icons">
             <div class="calendar-item">
@@ -43,21 +50,16 @@
                 <p>Año</p>
             </div>
         </div>
-        
+        <script src="javascript.js"></script>
     </div>
-    
 
-    <button id="musicButton" onclick="toggleMusic()">🎶</button>
+    <<button id="musicButton" onclick="toggleMusic()">🎶</button>
     <audio id="backgroundMusic" loop>
         <source src="audio/DUKI - Si Me Sobrara el Tiempo (Video Oficial).mp3" type="audio/mpeg">
         <source src="audio/DUKI - Antes de Perderte (Video Oficial).mp3" type="audio/mpeg">
     </audio>
 
-    <!-- Script del JavaScript para el carousel y otras funcionalidades -->
-    
-
     <script>
-        // Código adicional para el carousel y música.
         let index = 0;
         const images = document.querySelectorAll(".carousel img");
         const music = document.getElementById("backgroundMusic");
@@ -83,7 +85,6 @@
                  musicButton.textContent = "🎶";
              }
         }
-
         window.addEventListener('click', () => {
             music.play().catch((error) => {
                 console.error("Error al iniciar la música:", error);
@@ -102,8 +103,5 @@
 
         setInterval(createHeart, 500);
     </script>
-    <p id="dynamicText"></p>
-    <script src="javascript.js"></script>
 </body>
-    
 </html>

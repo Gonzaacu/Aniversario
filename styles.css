@@ -81,6 +81,28 @@ h1 {
 .next {
     right: 10px;
 }
+.calendar-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    padding: 10px 0;
+}
+
+.calendar-item {
+    text-align: center;
+}
+
+.calendar-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.calendar-item p {
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: white;
+}
 
 button:focus {
     outline: none;

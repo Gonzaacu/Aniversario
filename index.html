@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Aniversario!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Feliz Aniversario, [Nombre]</h1>
+        <p class="typing-text">Un año lleno de amor y momentos inolvidables.</p>
+        
+        <div class="carousel">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <img src="img/IMG-1.jpg" alt="Foto 1" class="active">
+            <img src="img/IMG-2.jpg" alt="Foto 2">
+            <img src="img/IMG-3.jpg" alt="Foto 3">
+            <img src="img/IMG-4.jpg" alt="Foto 4">
+            <img src="img/IMG-5.jpg" alt="Foto 5">
+            <img src="img/IMG-6.jpg" alt="Foto 6">
+            <img src="img/IMG-7.jpg" alt="Foto 7">
+            <img src="img/IMG-8.jpg" alt="Foto 8">
+            <img src="img/IMG-9.jpg" alt="Foto 9">
+            <img src="img/IMG-10.jpg" alt="Foto 10">
+            <img src="img/IMG-11.jpg" alt="Foto 11">
+            <img src="img/IMG-12.jpg" alt="Foto 12">
+            <img src="img/IMG-13.jpg" alt="Foto 13">
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        
+        <p>Te amo con todo mi corazón. ❤️</p>
+    </div>
+
+    <button id="musicButton" onclick="toggleMusic()">🎶</button>
+    <audio id="backgroundMusic" loop>
+        <source src="musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll(".carousel img");
+        const music = document.getElementById("backgroundMusic");
+        let musicPlaying = false;
+
+        function moveSlide(step) {
+            images[index].classList.remove("active");
+            index = (index + step + images.length) % images.length;
+            images[index].classList.add("active");
+        }
+
+        setInterval(() => moveSlide(1), 3000);
+
+        function toggleMusic() {
+            if (musicPlaying) {
+                music.pause();
+            } else {
+                music.play();
+            }
+            musicPlaying = !musicPlaying;
+        }
+
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 5000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+</body>
+</html>

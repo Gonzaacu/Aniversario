@@ -104,15 +104,24 @@ h1 {
     font-size: 1.2em;
     color: white;
 }
-.writing-text {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-top: 20px;
-    white-space: pre-wrap; /* Permite saltos de línea automáticos */
-    word-wrap: break-word; /* Evita que las palabras se salgan del contenedor */
-    width: 80%; /* Controla el ancho del texto */
-    margin: 0 auto;
+.typing-text {
+    font-size: 18px;  /* Tamaño de la fuente */
+    font-family: 'Courier New', monospace;  /* Estilo de la fuente */
+    white-space: nowrap;  /* Evitar que el texto se divida en varias líneas */
+    overflow: hidden;  /* Esconde el texto extra */
+    width: 0;  /* Empieza con el ancho en 0 */
+    animation: typing 5s steps(50) forwards, blink-caret 0.75s step-end infinite;  /* Efecto de escritura */
+}
+
+/* Animación para el efecto de escritura */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Efecto del cursor parpadeante */
+@keyframes blink-caret {
+    50% { border-color: transparent; }
 }
 
 button:focus {
